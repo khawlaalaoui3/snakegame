@@ -164,34 +164,62 @@ Le jeu offre une expérience personnalisable grâce à des contrôles interactif
 
 ### Architecture
 
+Structure du projet
+
+Voici l'architecture principale du projet avec la responsabilité de chaque fichier/classe :
+
 snakegame/
 ├── index.html
-│   └── Point d'entrée HTML du jeu
+│ └── Point d'entrée HTML du jeu
 ├── style.css
-│   └── Styles CSS : glassmorphism, typographie, couleurs et HUD
+│ └── Styles CSS : glassmorphism, typographie, couleurs et HUD
 ├── sketch.js
-│   └── Fichier principal : boucle 60FPS, gestion états (menu, jeu, gameOver), UI, audio, particules, collisions, contrôles clavier/souris
+│ └── Fichier principal :
+│ - Boucle 60FPS
+│ - Gestion états (menu, jeu, gameOver)
+│ - UI, audio, particules
+│ - Gestion collisions
+│ - Contrôles clavier/souris
 ├── vehicle.js
-│   └── Classe de base (INTOUCHABLE) pour tous véhicules : position, vélocité, accélération, forces (seek, arrive, wander, avoid), mise à jour, affichage
+│ └── Classe de base (INTOUCHABLE) pour tous véhicules :
+│ - Position, vélocité, accélération
+│ - Forces : seek, arrive, wander, avoid
+│ - Mise à jour et affichage
 ├── snake.js
-│   └── Classe Snake : gère le serpent principal, segments, suivi fluide, croissance, collision avec soi-même, wrap around
+│ └── Classe Snake :
+│ - Gère le serpent principal et ses segments
+│ - Suivi fluide, croissance
+│ - Collision avec soi-même
+│ - Wrap around
 ├── snakeVehicle.js
-│   └── Segment du serpent : affichage des segments et tête avec gradient, glow et yeux expressifs
+│ └── Segment du serpent :
+│ - Affichage des segments et tête
+│ - Gradient, glow et yeux expressifs
 ├── vehicleWander.js
-│   └── Ennemi ou wander : comportements wander/pursue, détection joueur, avoid obstacles, trail pour effet de mouvement, wrap around
+│ └── Ennemi ou wander :
+│ - Comportements wander/pursue
+│ - Détection du joueur
+│ - Évitement obstacles
+│ - Trail pour effet de mouvement
+│ - Wrap around
 ├── obstacle.js
-│   └── Obstacle statique : octogone vert, rotation et pulsation, évité par tous véhicules
+│ └── Obstacle statique :
+│ - Octogone vert
+│ - Rotation et pulsation
+│ - Évité par tous véhicules
 ├── food.js
-│   └── Nourriture : hexagone cyan, rotation et glow, collectée par le serpent
+│ └── Nourriture :
+│ - Hexagone cyan
+│ - Rotation et glow
+│ - Collectée par le serpent
 ├── assets/
-│   └── inconsolata.otf
-│       └── Police utilisée pour le mode Text (texte converti en points pour le serpent)
+│ └── inconsolata.otf
+│ └── Police utilisée pour le mode Text
 ├── libraries/
-    ├── p5.min.js
-    │   └── Bibliothèque p5.js pour dessin et animation
-    └── p5.sound.min.js
-        └── Bibliothèque audio p5.js pour sons et musiques
-
+│ ├── p5.min.js
+│ │ └── Bibliothèque p5.js pour dessin et animation
+│ └── p5.sound.min.js
+│ └── Bibliothèque audio p5.js pour sons et musiques
 ---
 
 ## Améliorations Futures
